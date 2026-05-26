@@ -1,0 +1,334 @@
+body {
+    margin: 0;
+    font-family: monospace;
+    background: linear-gradient(135deg, #dfe9f3, #ffffff);
+    height: 100%;
+}
+
+.up1 {
+    background-color: rgb(199, 199, 199);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+.leaveanduser{
+    display: flex;
+}
+.menu1,.menu2,.menu3 {
+    font-size: 17px;
+    font-family: monospace;
+    cursor: pointer;
+    transition: 0.2s;
+    padding: 6px 45px;
+    border-radius: 8px;
+    color: #111;
+    text-decoration: none;
+}
+.menu1:hover,.menu2:hover,.menu3:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+.menu5,.menu4 {
+    font-size: 16px;
+    font-family: monospace;
+    cursor: pointer;
+    margin-right: 20px;
+    padding: 8px 14px;
+    border: 1px solid black;
+    color: black;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+.menu4:hover {
+    border: 1px solid #555555;
+    color: #333333;
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.menu5 {
+    background-color: #333333;
+    color: white;
+}
+
+.menu5:hover {
+    background-color: #555555;
+}
+
+#datetime {
+    background-color: #e9fcfe;
+    font-size: 16px;
+    font-family: 'Times New Roman', serif;
+    text-align: center;
+    float: right;
+    margin: 30px;
+    padding: 20px;
+    border: 2px solid #111;
+    border-radius: 15px;
+}
+#box {
+    background-color: rgb(180, 180, 180);
+    width: 600px;
+    height: 250px;
+    margin: 80px auto;
+    padding: 20px;
+    padding-top: 40px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid rgb(103, 103, 103);
+    border-radius: 60px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: scale(0.7);
+    animation: pop 1s ease forwards;
+}
+@keyframes pop {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+#btn{
+    width: 170px;
+    height: 50px;
+    background: linear-gradient(45deg, #00c9ff, #92fe9d);
+    border: none;
+    border-radius: 20px;
+    color: black;
+    margin: 20px;
+    position: absolute;
+    cursor: pointer;
+    bottom: 10px;
+    right: 40px;
+    transition: 0.2s;
+}
+#btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.tasks{
+    margin-left: 32%;
+}
+h1 {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+#taskholder {
+    width: 250px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: text;
+    margin-right: 10px;
+    align-items: center;
+}
+select{
+    width: 100px;
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#taskform button {
+    background: linear-gradient(135deg, #e3e2e2, #b8c7cf);;
+    padding: 10px;
+    border: 0.1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+#taskform button:hover {
+    transform: scale(1.01);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+}
+#task {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: center;
+}
+li {
+    font-family: 'Times New Roman', serif;
+    text-decoration:dotted;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+li img{
+    width: 20px;
+    margin-left: 30px;
+    margin-top: 0px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+li img:hover{
+    scale: 1.1;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+#timertask{
+    width: 70px;
+    margin: 0px 20px 0px 20px;
+    padding: 10px;
+    border: 0.1px solid black;
+    border-radius: 10px;
+}
+li input{
+    margin-right: 30px;
+    margin-top: 0px;
+    scale: 1.5;
+}
+.diagram{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 100px;   
+    float: left;
+}
+.diagram input{
+    border: 0.1px solid black;
+    border-radius: 7px;
+    padding: 7px;
+    margin-bottom: 25px;
+    margin-top: 5px;
+    cursor: text;
+}
+.diagram button{
+    width: 140px;
+    padding: 10px;
+    background: linear-gradient(45deg, #fcfcfc, #d3d3d3);
+    border: 1px solid black;
+    border-radius: 20px;
+    color: black;
+    margin-left: 50px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.diagram button:hover{
+    scale: 1.01;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+#diagramtext{
+    font-size: 20px;
+    text-align: center;
+    float: right;
+    margin: 50px 690px 20px 0;
+    padding: 20px;
+}
+#diagramma{
+    font-size: 25px;
+    text-align: center;
+    float: right;
+    margin: auto 450px 0px 20px;
+    width: 620px;
+    height: 300px;
+    border: 1px solid black;
+    border-bottom: 2px solid black;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    background:repeating-linear-gradient(to top, gray, gray 0.01px, white 1px, white 14px);
+    background-position: 0 5px;
+}
+.a2 {
+    width: 60px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+}
+.a3{
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+    border-top: 2px solid black;
+}
+.a4 {
+    width: 90px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 12px;
+    color: black;
+}
+hr{
+    background-color: black;
+    width: 2px;
+    height: 100%;
+    margin: 2px 0px 0px 0px;
+}
+.diagramrow{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.a2, .a4 {
+    transform-origin: bottom;
+    animation: diagcss 0.7s ease forwards;
+}
+@keyframes diagcss {
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+#technic{
+    font-size: 22px;
+    font-family: monospace;
+    font-weight: bold;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    margin: 50px 0 0 41vh;
+    width: 60%;
+    text-align: center;
+}
+#pomodoro,#gtd,#pareto {
+    border: 3px solid black ;
+    padding: 10px 15px 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    animation: animtech 0.5s ease forwards;
+}
+#pomodoro:hover,#gtd:hover,#pareto:hover {
+    scale: 1.1;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+#texttech{
+    width: 80%;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    margin: 50px 10% 0 10%;
+    padding: 30px;
+    font-size: 18px;
+    line-height: 1.8;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+#texttech.show{
+    opacity: 1;
+}

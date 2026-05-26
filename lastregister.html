@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        img{
+            float: left;
+            width: 45%;
+            height: 99vh;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0px;
+        }
+        form{
+            margin-left: 250px;
+        }
+        .right{
+            float: right;
+            width: 45%;
+            padding: 40px 80px;
+        }
+        .a1{
+            float: right;
+        }
+        h1{
+            margin-top: 100px;
+            text-align: center;
+        }
+        .a3{
+            display: flex;
+            flex-direction: column;
+            margin: 30px;
+        }
+        input{
+            width: 300px;
+            padding: 12px;
+            font-size: 15px;
+            border: 1px solid #c3c8ce;
+            border-radius: 6px;
+        }
+        button{
+            margin: 0 0 0 30px;
+            padding: 6px;
+            width: 30%;
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+        }
+        button:hover{
+            background-color: rgb(61, 61, 61);
+        }
+    </style>
+</head>
+<body>
+    <img src="1212.jpg">
+    <div class="right">
+    <div class="a1">Already have an account? <a href="lastlogin.html">Log in</a></div>
+    <h1>Sign up for Website</h1>
+    <form>
+        <div class="a3"><label>Name</label><input type="Text"  id="name" name="Name"></div>  
+        <div class="a3"><label>Surname</label><input type="Text" id="surname" name="surname"></div>       
+        <div class="a3"><label>E-mail</label><input type="email" id="email" name="email"></div>
+        <div class="a3"><label>Password</label><input type="password" id="password"></div> 
+        <div class="a3"><label>Password re</label><input type="password" id="password2"></div>             
+        <button type="button" onclick="usersave()">Sign up</button>
+    </form>
+    </div>
+    <script>
+        function usersave() {
+                let name = document.getElementById('name').value;
+                let surname = document.getElementById('surname').value;
+                let email = document.getElementById('email').value;
+                let password = document.getElementById('password').value;
+                let password2 = document.getElementById('password2').value;
+                if(name === '' || surname === '' || email === '' || password === '' || password2 === ''){
+                    alert('Заполни все поля!');
+                    return;
+                }
+                if (password != password2){
+                    alert('Пароли не совпадают');
+                }
+                else {
+                    let user = {
+                        name: name,
+                        surname: surname,
+                        email: email,
+                        password: password
+                    };
+                localStorage.setItem('FormUser', JSON.stringify(user));
+                window.location.href = 'lastlogin.html'
+                }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connection with developers</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: monospace;
+            background: linear-gradient(135deg, #dfe9f3, #ffffff);
+            height: 100vh;
+        }
+
+        .up1 {
+            background-color: rgb(199, 199, 199);
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid black;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 0 30px;
+            box-sizing: border-box;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+        }
+        .leaveanduser{
+            display: flex;
+        }
+        .menu1,.menu2,.menu3 {
+            font-size: 17px;
+            font-family: monospace;
+            cursor: pointer;
+            transition: 0.2s;
+            padding: 6px 45px;
+            border-radius: 8px;
+            color: #111;
+            text-decoration: none;
+        }
+        .menu1:hover,.menu2:hover,.menu3:hover {
+            background-color: rgba(0, 0, 0, 0.08);
+        }
+        .menu5,.menu4 {
+            font-size: 16px;
+            font-family: monospace;
+            cursor: pointer;
+            margin-right: 20px;
+            padding: 8px 14px;
+            border: 1px solid black;
+            color: black;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+        .menu4:hover {
+            border: 1px solid #555555;
+            color: #333333;
+            background-color: rgba(0, 0, 0, 0.08);
+        }
+
+        .menu5 {
+            background-color: #333333;
+            color: white;
+        }
+
+        .menu5:hover {
+            background-color: #555555;
+        }
+        #allinputs{
+            background-color: #c9e0f7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 550px;
+            width: 700px;
+            margin: 80px;
+            margin-left: 65vh;
+            padding: 20px;
+            gap: 15px;
+            font-size: 16px;
+            border: 1px solid black;
+            border-radius: 20px;
+        }
+        input {
+            height: 40px;
+            padding: 0 0 0 10px;
+            width: 500px;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+        #inputcomplaint{
+            height: 200px;
+            padding: 10px 0 0 10px;
+            width: 500px;
+            font-size: 16px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+        button{
+            padding: 10px 40px 10px 40px;
+            border-radius: 10px;
+            margin-top: 20px;
+            background-color: #555555;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #575757;
+            transform: scale(1.02);
+            box-shadow: 0 5px 40px rgba(0, 0, 0, 0.1);            
+        }
+    </style>
+</head>
+<body>  
+    <header>
+        <div class="up1">
+        <div class="menu">
+        <img src="12345.png" class="logo"></img>
+        <div class="menu1" id="back">Главная</div>
+        <a href="https://chatgpt.com/" class="menu2">Помощь</a>
+        <a class="menu3">Связь</a></div>
+    </header>
+    <form id="allinputs">
+    Ваше имя<input type="text" id="inputname" placeholder="Введите имя" required>
+    Ваш почта<input type="email" id="inputmail" placeholder="Введите почту" required>
+    Ваша жалоба или советы по улучшению<textarea type="text" id="inputcomplaint" placeholder="Скажите что вам не нравится, поделитесь своим мнением" required></textarea>
+    <button type="submit">Отправить</button>
+    </form>
+
+    <script>
+        const inpname = document.getElementById('inputname')
+        const inpmail = document.getElementById('inputmail')
+        const inpcom = document.getElementById('inputcomplaint')
+        const forminp = document.getElementById('allinputs')
+        const params = new URLSearchParams(window.location.search);
+        const from = params.get('from');
+        const back = document.getElementById('back')
+        let value;
+        let regemail = /@.+\.(ru|com)$/
+        let regname = /\d/
+        let tr1 = false
+        let tr2 = false
+
+        forminp.addEventListener('submit', (e) => {
+            e.preventDefault()
+
+            if(!regname.test(inpname.value)){
+                inpname.style.border = '2px solid black'
+                tr2 = true
+            } else{
+                inpname.style.border = '2px solid red'
+                alert('Некорректное имя')
+                tr2 = false
+            }
+
+            if(regemail.test(inpmail.value)){
+                inpmail.style.border = '2px solid black'
+                tr1 = true
+            } else{
+                inpmail.style.border = '2px solid red'
+                alert('Не правильная Почта')
+                tr1 = false
+            }
+
+            if(tr1 && tr2){
+                inpname.value = ''
+                inpmail.value = ''
+                inpcom.value = ''
+                alert('Сообщение успешно отправлено !')
+            }
+        })
+
+        if (from === 'a1') {
+            value = true;
+            back.addEventListener('click', () => {
+                window.location.href = 'indexuser.html'
+            })
+        }else if (from === 'a2') {
+            value = false;
+            back.addEventListener('click', () => {
+            window.location.href = 'index.html'
+            })
+        }
+    </script>
+</body>
+</html>

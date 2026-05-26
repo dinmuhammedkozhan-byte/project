@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="up1">
+        <div class="menu">
+        <img src="12345.png" class="logo"></img>
+        <div class="menu1">Главная</div>
+        <a href="https://chatgpt.com/" class="menu2">Помощь</a>
+        <a href="connection.html?from=a1" class="menu3">Связь</a></div>
+        <div class="leaveanduser">
+        <div class="menu4" id="user"></div>
+        <button type="button" onclick="leave()" class="menu5">Выйти</button></div></div>
+    </header>
+    <div id="datetime"><span></span></div>
+    <div id="box">Этот курс поможет вам научиться правильно распределять своё время и использовать технику Pomodoro: 25 минут работы и 5 минут отдыха.<button type="button" id="btn">Больше информаций</button></div>
+
+    
+    <h1>Ваши задание:</h1>
+    <div class="tasks">
+        <form id="taskform">
+        <input type="text" id="taskholder" placeholder="Введите задание" required>
+        <select id="typetask">
+            <option>Работа</option>
+            <option>Учеба</option>
+            <option>Отдых</option>
+            <option>Спорт</option>
+            <option>Игра</option>
+            <option>Другое</option>
+        </select>
+        <select id="priority">
+            <option>Низкая</option>
+            <option>Средная</option>
+            <option>Высокая</option>
+        </select>
+        <input type="number" id="timertask" min="0" placeholder="Время" required>
+        <button type="submit">Добавить</button>
+        </form>
+        <ul id="task"></ul>
+    </div><hr style="height: 2px; background-color: #333; width: 100%;">
+    <form id="diagram">
+    <div class="diagram">
+        <h3>Скажите сколько часов вы занимались делом чтобы вывести диаграмму</h3>
+        Работа<br><input type="number" id="workdiagram" placeholder="Напишите" required><br>
+        Учеба<br><input type="number" id="studydiagram" placeholder="Напишите" required><br>
+        Отдых<br><input type="number" id="restdiagram" placeholder="Напишите" required><button type="submit" >Подвердить</button><br>
+        Спорт<br><input type="number" id="sportdiagram" placeholder="Напишите" required><br>
+        Игра<br><input type="number" id="gamediagram" placeholder="Напишите" required><br>
+    </div>
+    <div id="diagramtext">Диаграмма</div>
+    <div id="diagramma"></div></form>
+    <hr style="height: 2px; background-color: #333; width: 100%;">
+    <div id="technic">
+    <div id="pomodoro">Техника Pomodoro</div>
+    <div id="gtd">GTD (Getting Things Done) </div>
+    <div id="pareto">Принцип Pareto</div>
+    </div>
+    <div id="texttech"></div>
+
+    <script src="script.js"></script>
+    <script>
+        let user = JSON.parse(localStorage.getItem('FormUser'));
+        const username = document.getElementById('user')
+        username.innerText = user.name;
+        function leave(){
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
